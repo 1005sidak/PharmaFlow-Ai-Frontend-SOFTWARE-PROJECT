@@ -118,6 +118,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .field input,
 .field select {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   font-family: var(--font-body);
   font-size: 0.95rem;
   padding: 12px 14px;

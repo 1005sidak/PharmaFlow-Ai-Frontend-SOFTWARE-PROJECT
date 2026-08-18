@@ -47,7 +47,7 @@
 .activity-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; background: var(--ink-soft); }
 .activity-item.type-add .activity-dot { background: var(--success); }
 .activity-item.type-alert .activity-dot { background: var(--danger); }
-.activity-item.type-rx .activity-dot { background: var(--maroon-600); }
+.activity-item.type-sale .activity-dot { background: var(--maroon-600); }
 .activity-item p { font-size: 0.88rem; color: var(--ink); }
 .activity-time { font-size: 0.74rem; color: var(--ink-soft); }
 

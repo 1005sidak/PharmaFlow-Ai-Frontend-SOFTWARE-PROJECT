@@ -5,7 +5,7 @@ const STATS = [
   { label: 'Total Medicines', value: '1,245', trend: '+4.2%', tone: 'good', icon: '⬡' },
   { label: 'Low Stock', value: '38', trend: '+6 today', tone: 'warn', icon: '▤' },
   { label: 'Expiring Soon', value: '12', trend: 'within 30 days', tone: 'bad', icon: '◔' },
-  { label: "Today's Transactions", value: '204', trend: '+18 vs yesterday', tone: 'good', icon: '✎' }
+  { label: "Today's Sales", value: '₹48,200', trend: '+₹6,100 vs yesterday', tone: 'good', icon: '▣' }
 ]
 
 const CHART_DATA = [
@@ -15,18 +15,18 @@ const CHART_DATA = [
 ]
 
 const ACTIVITIES = [
-  { text: 'Paracetamol 500mg — 200 units added', time: '10 min ago', type: 'add' },
-  { text: 'Prescription #4821 processed for R. Mehta', time: '32 min ago', type: 'rx' },
+  { text: 'Paracetamol 500mg — 200 units added to inventory', time: '10 min ago', type: 'add' },
+  { text: 'Invoice #4821 — ₹3,420 billed successfully', time: '32 min ago', type: 'sale' },
   { text: 'Amoxicillin 250mg — low stock alert triggered', time: '1 hr ago', type: 'alert' },
   { text: 'Batch #B-1092 flagged for expiry in 14 days', time: '3 hr ago', type: 'alert' },
-  { text: 'Insulin Glargine — 60 units added', time: '5 hr ago', type: 'add' }
+  { text: 'Insulin Glargine — 60 units restocked', time: '5 hr ago', type: 'add' }
 ]
 
 const QUICK_ACTIONS = [
   { label: 'Add Medicine', icon: '+' },
-  { label: 'Scan Medicine', icon: '⌕' },
+  { label: 'New Sale', icon: '▣' },
   { label: 'Check Inventory', icon: '▤' },
-  { label: 'Generate Report', icon: '▥' }
+  { label: 'View Alerts', icon: '◔' }
 ]
 
 export default function Dashboard() {
@@ -35,7 +35,7 @@ export default function Dashboard() {
       <div className="dash-head">
         <div>
           <span className="eyebrow">Overview / today</span>
-          <h1>Good morning, Jordan 👋</h1>
+          <h1>Good morning, Jordan</h1>
         </div>
         <div className="quick-actions">
           {QUICK_ACTIONS.map((a) => (

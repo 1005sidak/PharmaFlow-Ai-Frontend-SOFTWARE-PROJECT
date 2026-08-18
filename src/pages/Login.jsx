@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.png'
+import FloatingCapsules from '../components/FloatingCapsules'
 import './Auth.css'
 
 export default function Login() {
@@ -36,6 +37,7 @@ export default function Login() {
   return (
     <div className="auth-page">
       <div className="auth-side">
+        <FloatingCapsules />
         <img src={logo} alt="" className="auth-capsule" />
         <blockquote>
           "Every capsule, accounted for."

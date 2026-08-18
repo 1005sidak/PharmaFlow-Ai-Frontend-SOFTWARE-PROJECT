@@ -15,13 +15,13 @@ export default function App() {
 
       <Route path="/app" element={<DashboardLayout />}>
         <Route index element={<Dashboard />} />
-        <Route path="inventory" element={<PlaceholderPage title="Inventory" />} />
         <Route path="medicines" element={<PlaceholderPage title="Medicines" />} />
-        <Route path="prescriptions" element={<PlaceholderPage title="Prescriptions" />} />
-        <Route path="ai-assistant" element={<PlaceholderPage title="AI Assistant" />} />
+        <Route path="inventory" element={<PlaceholderPage title="Inventory" />} />
+        <Route path="sales" element={<PlaceholderPage title="Sales & Billing" />} />
+        <Route path="purchases" element={<PlaceholderPage title="Purchasing" />} />
         <Route path="alerts" element={<PlaceholderPage title="Alerts" />} />
-        <Route path="reports" element={<PlaceholderPage title="Reports" />} />
-        <Route path="history" element={<PlaceholderPage title="History" />} />
+        <Route path="analytics" element={<PlaceholderPage title="Analytics" />} />
+        <Route path="expiry-risk" element={<PlaceholderPage title="Expiry Risk" />} />
         <Route path="settings" element={<PlaceholderPage title="Settings" />} />
       </Route>
     </Routes>

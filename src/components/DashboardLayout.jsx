@@ -3,14 +3,14 @@ import logo from '../assets/logo.png'
 import './DashboardLayout.css'
 
 const NAV = [
-  { to: '/app', label: 'Dashboard', end: true, icon: '⬚' },
-  { to: '/app/inventory', label: 'Inventory', icon: '▤' },
+  { to: '/app', label: 'Dashboard', end: true, icon: '⌂' },
   { to: '/app/medicines', label: 'Medicines', icon: '⬡' },
-  { to: '/app/prescriptions', label: 'Prescriptions', icon: '✎' },
-  { to: '/app/ai-assistant', label: 'AI Assistant', icon: '✦' },
+  { to: '/app/inventory', label: 'Inventory', icon: '▤' },
+  { to: '/app/sales', label: 'Sales & Billing', icon: '▣' },
+  { to: '/app/purchases', label: 'Purchasing', icon: '▥' },
   { to: '/app/alerts', label: 'Alerts', icon: '◔' },
-  { to: '/app/reports', label: 'Reports', icon: '▥' },
-  { to: '/app/history', label: 'History', icon: '↺' }
+  { to: '/app/analytics', label: 'Analytics', icon: '◒' },
+  { to: '/app/expiry-risk', label: 'Expiry Risk', icon: '✦' }
 ]
 
 export default function DashboardLayout() {

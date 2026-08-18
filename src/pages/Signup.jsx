@@ -1,14 +1,13 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.png'
+import FloatingCapsules from '../components/FloatingCapsules'
 import './Auth.css'
-
-const ROLES = ['Pharmacist', 'Doctor', 'Admin', 'Patient']
 
 export default function Signup() {
   const navigate = useNavigate()
   const [form, setForm] = useState({
-    name: '', email: '', phone: '', password: '', confirmPassword: '', role: ROLES[0]
+    name: '', email: '', phone: '', password: '', confirmPassword: ''
   })
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
@@ -41,6 +40,7 @@ export default function Signup() {
   return (
     <div className="auth-page">
       <div className="auth-side">
+        <FloatingCapsules />
         <img src={logo} alt="" className="auth-capsule" />
         <blockquote>
           "Set up once, dispense with confidence."
@@ -55,9 +55,9 @@ export default function Signup() {
         </Link>
 
         <div className="auth-card card auth-card-wide">
-          <span className="eyebrow">Create account</span>
-          <h1>Join PharmaFlow</h1>
-          <p className="auth-sub">Set up your workspace in a couple of steps.</p>
+          <span className="eyebrow">Setup</span>
+          <h1>Set up your workspace</h1>
+          <p className="auth-sub">Create your pharmacy account to get started.</p>
 
           <form onSubmit={handleSubmit} className="auth-form">
             <div className="field">
@@ -90,13 +90,6 @@ export default function Signup() {
                 <input id="confirmPassword" name="confirmPassword" type="password" required placeholder="••••••••"
                   value={form.confirmPassword} onChange={handleChange} />
               </div>
-            </div>
-
-            <div className="field">
-              <label htmlFor="role">Role</label>
-              <select id="role" name="role" value={form.role} onChange={handleChange}>
-                {ROLES.map((r) => <option key={r} value={r}>{r}</option>)}
-              </select>
             </div>
 
             {error && <p className="auth-error">{error}</p>}
