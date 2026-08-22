@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}PharmaFlow | Pharmacy Management{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/landing.css' %}">{% endblock %}
+
+{% block body %}
+<main class="landing-page">
+  <section class="landing-hero">
+    <div class="pf-container">
+      <nav class="landing-nav d-flex align-items-center justify-content-between mb-5">
+        <a class="pf-brand" href="{% url 'landing' %}">
+          <span class="logo-wrap"><img src="{% static 'images/logo.png' %}" alt="PharmaFlow"></span>
+          <span>PharmaFlow</span>
+        </a>
+        <div class="d-none d-md-flex align-items-center gap-4">
+          <a class="nav-link" href="#features">Features</a>
+          <a class="nav-link" href="#modules">Modules</a>
+          <a class="nav-link" href="#workflow">Workflow</a>
+        </div>
+        <div class="d-flex gap-2">
+          <a class="btn btn-pf-ghost d-none d-sm-inline-flex" href="{% url 'login' %}">Login</a>
+          <a class="btn btn-pf-primary" href="{% url 'signup' %}">Get Started</a>
+        </div>
+      </nav>
+
+      <div class="row align-items-center g-4 g-lg-5">
+        <div class="col-lg-6">
+          <span class="eyebrow">Retail Pharmacy Command Center</span>
+          <h1 class="hero-title mt-3">Batch-aware pharmacy management.</h1>
+          <p class="hero-copy mb-4">Manage medicines, inventory, billing, purchases, alerts, analytics, and expiry risk from one clean dashboard built for daily pharmacy operations.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="{% url 'signup' %}" class="btn btn-pf-primary">Set up workspace</a>
+            <a href="{% url 'login' %}" class="btn btn-pf-ghost">Open dashboard</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-panel pf-card d-flex align-items-center justify-content-center p-4">
+            <span class="float-pill pill-1"></span>
+            <span class="float-pill pill-2"></span>
+            <span class="float-pill pill-3"></span>
+            <span class="logo-wrap logo-wrap--lg"><img src="{% static 'images/logo.png' %}" alt="PharmaFlow capsule logo"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5" id="features">
+    <div class="pf-container">
+      <div class="row mb-4 align-items-end">
+        <div class="col-lg-7"><h2 class="section-title">Built around the real pharmacy workflow.</h2></div>
+        <div class="col-lg-5"><p class="text-soft">Supplier is handled as a purchase entity, roles are assigned by Admin, and expiry belongs to inventory batches.</p></div>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-3"><div class="pf-card feature-card"><div class="feature-icon">⬡</div><h5>Medicines</h5><p class="text-soft mb-0">Master data for medicine name, category, GST rate, and price.</p></div></div>
+        <div class="col-md-6 col-lg-3"><div class="pf-card feature-card"><div class="feature-icon">▤</div><h5>Inventory</h5><p class="text-soft mb-0">Batch numbers, quantity, stock-in, stock-out, and expiry tracking.</p></div></div>
+        <div class="col-md-6 col-lg-3"><div class="pf-card feature-card"><div class="feature-icon">▣</div><h5>Sales & Billing</h5><p class="text-soft mb-0">Cart, GST, discounts, invoice generation, and stock decrement.</p></div></div>
+        <div class="col-md-6 col-lg-3"><div class="pf-card feature-card"><div class="feature-icon">✦</div><h5>Expiry Risk</h5><p class="text-soft mb-0">Low, medium, and high risk scoring based on expiry and movement.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5" id="modules">
+    <div class="pf-container">
+      <div class="cta-band pf-card p-4 p-lg-5 d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-4">
+        <div><span class="eyebrow text-warning">PharmaFlow modules</span><h2 class="mb-2">Dashboard, medicines, inventory, purchasing, billing, alerts, analytics.</h2><p class="mb-0 opacity-75">Everything stays in one Bootstrap frontend your team can understand and maintain.</p></div>
+        <a href="{% url 'dashboard' %}" class="btn btn-light rounded-pill fw-bold px-4">Preview dashboard</a>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

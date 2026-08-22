@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Setup | PharmaFlow{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/auth.css' %}">{% endblock %}
+
+{% block body %}
+<main class="auth-page">
+  <section class="auth-side">
+    <div class="floating-meds"><span class="med-capsule med-1"></span><span class="med-capsule med-2"></span><span class="med-capsule med-3"></span><span class="med-capsule med-5"></span><span class="med-tablet tab-1"></span><span class="med-tablet tab-2"></span><span class="med-tablet tab-3"></span></div>
+    <img src="{% static 'images/logo.png' %}" alt="PharmaFlow">
+    <blockquote>"Set up once, dispense with confidence."<span>— onboarding takes under three minutes</span></blockquote>
+  </section>
+  <section class="auth-form-wrap">
+    <a href="{% url 'landing' %}" class="auth-brand"><img src="{% static 'images/logo.png' %}" alt="PharmaFlow"><span>PharmaFlow</span></a>
+    <div class="pf-card auth-card auth-card-wide">
+      <span class="eyebrow">Setup</span>
+      <h1>Set up your workspace</h1>
+      <p class="auth-sub">Create your pharmacy account to get started.</p>
+      <form method="post" action="{% url 'signup' %}">
+        {% csrf_token %}
+        {% if messages %}{% for message in messages %}<p class="auth-error">{{ message }}</p>{% endfor %}{% endif %}
+        <div class="mb-3"><label class="form-label" for="name">Full name</label><input class="form-control" id="name" name="name" placeholder="Jordan Rae" required></div>
+        <div class="row g-3 mb-3"><div class="col-md-6"><label class="form-label" for="email">Email</label><input class="form-control" id="email" name="email" type="email" placeholder="you@pharmacy.com" required></div><div class="col-md-6"><label class="form-label" for="phone">Phone</label><input class="form-control" id="phone" name="phone" type="tel" placeholder="+91 98765 43210" required></div></div>
+        <div class="row g-3 mb-3"><div class="col-md-6"><label class="form-label" for="password">Password</label><input class="form-control" id="password" name="password" type="password" placeholder="Password" required></div><div class="col-md-6"><label class="form-label" for="confirm_password">Confirm password</label><input class="form-control" id="confirm_password" name="confirm_password" type="password" placeholder="Confirm password" required></div></div>
+        <button class="btn btn-pf-primary w-100 mt-2" type="submit">Sign Up</button>
+      </form>
+      <div class="auth-links"><span>Already have an account? <a href="{% url 'login' %}">Login</a></span></div>
+    </div>
+  </section>
+</main>
+{% endblock %}

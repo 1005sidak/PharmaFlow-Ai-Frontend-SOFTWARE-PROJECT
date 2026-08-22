@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login | PharmaFlow{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/auth.css' %}">{% endblock %}
+
+{% block body %}
+<main class="auth-page">
+  <section class="auth-side">
+    <div class="floating-meds"><span class="med-capsule med-1"></span><span class="med-capsule med-2"></span><span class="med-capsule med-3"></span><span class="med-capsule med-4"></span><span class="med-tablet tab-1"></span><span class="med-tablet tab-2"></span></div>
+    <img src="{% static 'images/logo.png' %}" alt="PharmaFlow">
+    <blockquote>"Every capsule, accounted for."<span>— the PharmaFlow dashboard, five minutes a day</span></blockquote>
+  </section>
+  <section class="auth-form-wrap">
+    <a href="{% url 'landing' %}" class="auth-brand"><img src="{% static 'images/logo.png' %}" alt="PharmaFlow"><span>PharmaFlow</span></a>
+    <div class="pf-card auth-card">
+      <span class="eyebrow">Sign in</span>
+      <h1>Welcome back</h1>
+      <p class="auth-sub">Enter your credentials to reach the dashboard.</p>
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        {% if messages %}{% for message in messages %}<p class="auth-error">{{ message }}</p>{% endfor %}{% endif %}
+        <div class="mb-3"><label class="form-label" for="email">Email</label><input class="form-control" id="email" name="email" type="email" placeholder="you@pharmacy.com" required></div>
+        <div class="mb-3"><label class="form-label" for="password">Password</label><input class="form-control" id="password" name="password" type="password" placeholder="Password" required></div>
+        <button class="btn btn-pf-primary w-100 mt-2" type="submit">Login</button>
+      </form>
+      <div class="auth-links"><span>Don't have an account? <a href="{% url 'signup' %}">Set up workspace</a></span></div>
+    </div>
+  </section>
+</main>
+{% endblock %}
